@@ -1,8 +1,13 @@
+*.iml
+/local.properties
+.idea
+.DS_Store
+
 # Built application files
-*.apk
+//*.apk
 *.ap_
 
-# Files for the ART/Dalvik VM
+# Files for the Dalvik VM
 *.dex
 
 # Java class files
@@ -11,7 +16,8 @@
 # Generated files
 bin/
 gen/
-out/
+androidTest/
+test/
 
 # Gradle files
 .gradle/
@@ -31,10 +37,3 @@ proguard/
 
 # Android Studio captures folder
 captures/
-
-# Intellij
-*.iml
-.idea/workspace.xml
-
-# Keystore files
-*.jks

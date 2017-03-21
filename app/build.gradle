@@ -29,12 +29,47 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+//    splits {
+//
+//        // Configures multiple APKs based on screen density.
+//        density {
+//
+//            // Configures multiple APKs based on screen density.
+//            enable true
+//
+//            // Specifies a list of screen densities Gradle should not create multiple APKs for.
+//            exclude "ldpi", "xxhdpi", "xxxhdpi"
+//
+//            // Specifies a list of compatible screen size settings for the manifest.
+//            compatibleScreens 'small', 'normal', 'large', 'xlarge'
+//        }
+//
+//        // Configures multiple APKs based on ABI.
+//        abi {
+//
+//            // Enables building multiple APKs per ABI.
+//            enable true
+//
+//            // By default all ABIs are included, so use reset() and include to specify that we only
+//            // want APKs for x86, armeabi-v7a, and mips.
+//
+//            // Resets the list of ABIs that Gradle should create APKs for to none.
+//            reset()
+//
+//            // Specifies a list of ABIs that Gradle should create APKs for.
+//            include "x86", "armeabi-v7a", "mips"
+//
+//            // Specifies that we do not want to also generate a universal APK that includes all ABIs.
+//            universalApk false
+//        }
+//    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
 
     compile 'com.github.hotchemi:permissionsdispatcher:2.2.1'

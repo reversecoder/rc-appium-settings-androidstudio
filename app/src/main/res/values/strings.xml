@@ -22,4 +22,10 @@
         $ adb shell pm grant com.kazucocoa.droidtesthelper android.permission.CHANGE_CONFIGURATION
     </string>
     <string name="set_for_change_locale">set with …</string>
+
+    <string name="placeholder"></string>
+    <string name="data_on">Enabling data service.</string>
+    <string name="data_off">Disabling data service.</string>
+    <string name="wifi_on">Enabling wifi service.</string>
+    <string name="wifi_off">Disabling wifi service.</string>
 </resources>

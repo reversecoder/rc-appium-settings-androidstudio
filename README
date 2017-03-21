@@ -45,3 +45,26 @@ Some features are similar to https://github.com/linkedin/test-butler published b
         - ```$ adb shell am broadcast -a 'AppiumSettings' --ez ANIMATION true```
     - disable
         - ```$ adb shell am broadcast -a 'AppiumSettings' --ez ANIMATION false```
+
+## Enable/disable wifi
+
+    - enable
+        - ```$ adb shell am start -n com.reversecoder.appium.settings/com.reversecoder.appium.settings.network.NetworkActivity -e wifi on```
+    - disable
+        - ```$ adb shell am start -n com.reversecoder.appium.settings/com.reversecoder.appium.settings.network.NetworkActivity -e wifi off```
+
+## Enable/disable data
+
+    - enable
+        - ```$ adb shell am start -n com.reversecoder.appium.settings/com.reversecoder.appium.settings.network.NetworkActivity -e data on```
+    - disable
+        - ```$ adb shell am start -n com.reversecoder.appium.settings/com.reversecoder.appium.settings.network.NetworkActivity -e data off```
+
+## Enable/disable data and wifi same time
+
+    - enable
+        - ```$ adb shell am start -n com.reversecoder.appium.settings/com.reversecoder.appium.settings.network.NetworkActivity -e wifi on -e data off```
+
+## Unlock device
+
+ ```$ adb shell am start -n com.reversecoder.appium.settings/com.reversecoder.appium.settings.unlock.Unlock```

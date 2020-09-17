@@ -3,10 +3,11 @@ package com.reversecoder.appium.settings.locale;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.reversecoder.appium.settings.R;
 import com.reversecoder.appium.settings.util.Utils;

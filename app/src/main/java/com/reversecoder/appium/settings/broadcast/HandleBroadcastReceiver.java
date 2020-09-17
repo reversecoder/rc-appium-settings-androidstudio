@@ -3,11 +3,12 @@ package com.reversecoder.appium.settings.broadcast;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
 
+import androidx.annotation.NonNull;
+
+import com.reversecoder.appium.settings.account.HandleAccountActivity;
 import com.reversecoder.appium.settings.animation.HandleAnimations;
 import com.reversecoder.appium.settings.locale.HandleLocaleActivity;
-import com.reversecoder.appium.settings.activity.MainActivity;
 
 public class HandleBroadcastReceiver extends BroadcastReceiver {
 
@@ -15,9 +16,9 @@ public class HandleBroadcastReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (MainActivity.hasExtraRegardingAccountType(intent)) {
+        if (HandleAccountActivity.hasExtraRegardingAccountType(intent)) {
             Intent buildLaunchingMainActivityIntent =
-                    MainActivity.buildLaunchingMainActivityIntent(context, intent);
+                    HandleAccountActivity.buildLaunchingMainActivityIntent(context, intent);
             launchMainActivity(context, buildLaunchingMainActivityIntent);
         }
 

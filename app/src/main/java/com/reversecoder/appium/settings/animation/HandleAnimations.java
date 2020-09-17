@@ -2,8 +2,9 @@ package com.reversecoder.appium.settings.animation;
 
 import android.content.Intent;
 import android.os.IBinder;
-import android.support.annotation.NonNull;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

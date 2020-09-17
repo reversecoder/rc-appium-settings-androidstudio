@@ -2,17 +2,15 @@ apply plugin: 'com.android.application'
 //apply plugin: 'com.github.ben-manes.versions'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 29
+    buildToolsVersion "30.0.2"
 
     defaultConfig {
         applicationId "com.reversecoder.appium.settings"
         minSdkVersion 15
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0.0-SNAPSHOT"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        targetSdkVersion 29
+        versionCode 101
+        versionName "1.0.1-SNAPSHOT"
     }
 
     signingConfigs {
@@ -67,23 +65,12 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
 
-    compile 'com.android.support:appcompat-v7:25.3.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
-
-    compile 'com.github.hotchemi:permissionsdispatcher:2.2.1'
-    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:2.2.1'
-
-    testCompile 'junit:junit:4.12'
-
-    androidTestCompile "com.android.support.test:runner:0.5"
-    androidTestCompile "com.android.support.test:rules:0.5"
-
-    configurations {
-        // To avoid conflict
-        androidTestCompile.exclude group: 'com.android.support', module: 'support-annotations'
-    }
+    implementation 'org.permissionsdispatcher:permissionsdispatcher:4.8.0'
+    annotationProcessor 'org.permissionsdispatcher:permissionsdispatcher-processor:4.8.0'
 
     //remove lint while building
     configure(android.lintOptions) {
@@ -106,34 +93,34 @@ dependencies {
     }
 
     //git uploading process
-
-    apply plugin: 'maven'
-
-    repositories {
-        maven {
-            url "https://raw.github.com/synergian/wagon-git/releases"
-        }
-    }
-
-    configurations { deployLibrary }
-
-    dependencies { deployLibrary "ar.com.synergian:wagon-git:0.3.0" }
-
-    uploadArchives {
-
-        repositories.mavenDeployer {
-            configuration = configurations.deployLibrary
-            repository(url: 'git:releases://git@github.com:reversecoder/rc-appium-settings-androidstudio.git')
-            snapshotRepository(url: 'git:snapshots://git@github.com:reversecoder/rc-appium-settings-androidstudio.git')
-
-            uniqueVersion = true
-
-            pom.project {
-                groupId = 'com.reversecoder.appium.settings'
-                version = '1.0.0-SNAPSHOT'
-                artifactId = 'rc-appium-settings'
-                packaging 'apk'
-            }
-        }
-    }
+//
+//    apply plugin: 'maven'
+//
+//    repositories {
+//        maven {
+//            url "https://raw.github.com/synergian/wagon-git/releases"
+//        }
+//    }
+//
+//    configurations { deployLibrary }
+//
+//    dependencies { deployLibrary "ar.com.synergian:wagon-git:0.3.0" }
+//
+//    uploadArchives {
+//
+//        repositories.mavenDeployer {
+//            configuration = configurations.deployLibrary
+//            repository(url: 'git:releases://git@github.com:reversecoder/rc-appium-settings-androidstudio.git')
+//            snapshotRepository(url: 'git:snapshots://git@github.com:reversecoder/rc-appium-settings-androidstudio.git')
+//
+//            uniqueVersion = true
+//
+//            pom.project {
+//                groupId = 'com.reversecoder.appium.settings'
+//                version = '1.0.0-SNAPSHOT'
+//                artifactId = 'rc-appium-settings'
+//                packaging 'apk'
+//            }
+//        }
+//    }
 }
